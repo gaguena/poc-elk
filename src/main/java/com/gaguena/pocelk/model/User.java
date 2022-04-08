@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.gaguena.pocelk.data.UserData;
+
 import lombok.Getter;
 
 @Getter
@@ -17,4 +19,11 @@ public class User  extends BaseEntity {
     private String email;
 
     private String password;
+ 
+    public static User create(final UserData data) {
+        final User user = new User();
+        user.email = data.getUserName();
+        user.password = data.getPassword();
+        return user;
+    }
 }

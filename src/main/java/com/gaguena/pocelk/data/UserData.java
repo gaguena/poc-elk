@@ -26,4 +26,5 @@ public class UserData implements Serializable {
     private static String bCrypt(final String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt(WORK));
     }
+
 }
